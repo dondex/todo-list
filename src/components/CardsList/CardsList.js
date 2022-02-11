@@ -3,11 +3,17 @@ import Card from '../Card/Card';
 import './CardsList.css';
 import AddCard from '../AddCard/AddCard';
 
-const cardsList = ({ cards, handleAddCard }) => {
+const cardsList = ({ cards, handleAddCard, handleDeleteCard }) => {
   return (
     <div className='CardsList'>
         {cards.map((card)=> (
-            <Card id={card.id} text={card.text} date={card.date} comment={card.comment} />
+            <Card 
+            id={card.id} 
+            title={card.title} 
+            date={card.date} 
+            text={card.text} 
+            handleDeleteCard={handleDeleteCard}
+            />
         ))}  
         <AddCard handleAddCard={handleAddCard}/> 
     </div>

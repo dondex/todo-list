@@ -39,15 +39,22 @@ const style = {
 };
 
 const AddCard = ({ handleAddCard }) => {
-  const [cardText, setCardText] = useState('');
+  // const [cardText, setCardText] = useState('');
 
+  const [memo, setMemo] = useState({
+      title: '',
+      text: ''
+  })
 
   const handleChange = (event) => {
-    setCardText(event.target.value);
+    setMemo(event.target.value);
   };
 
   const handleSaveClick = () => {
-    handleAddCard(cardText);
+    if(memo.trim().length > 0){
+      handleAddCard(memo);
+      setMemo('');
+    }
   };
 
   const [open, setOpen] = React.useState(false);
@@ -66,20 +73,25 @@ const AddCard = ({ handleAddCard }) => {
             BackdropComponent={Backdrop}
           >
               <Box sx={style}>
-                <TextField 
-                id="outlined-basic" 
-                label="Title"
-                variant="outlined" 
-                size='small' 
-                fullWidth />
-                <TextareaAutosize
-                  value={cardText}
+                <TextField
+                  name="title"
+                  value={memo.title}
                   onChange={handleChange}
-                  maxRows={4}
-                  aria-label="maximum height"
-                  placeholder="Comment"
-                  defaultValue=""
-                  style={{ width: 395, height: 300, marginTop: 10 }}
+                  id="outlined-basic" 
+                  label="Title"
+                  variant="outlined" 
+                  size='small' 
+                  fullWidth 
+                />
+                <TextareaAutosize
+                    value= {memo.text}
+                    onChange={handleChange}
+                    name="text"
+                    maxRows={4}
+                    aria-label="maximum height"
+                    placeholder="Comment"
+                    defaultValue=""
+                    style={{ width: 395, height: 300, marginTop: 10 }}
                 />
                 <div className='button-wrap'>
                   <Button 
