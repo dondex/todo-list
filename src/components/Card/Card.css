@@ -1,0 +1,25 @@
+.Card {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 1rem;
+    border: 1px solid black;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.Icon-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.deleteIcon {
+    cursor: pointer;
+}
+
+.deleteIcon:hover {
+    font-size: 30px;
+}

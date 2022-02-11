@@ -1,0 +1,22 @@
+.Card.AddCard {
+    background-color: blanchedalmond;
+}
+.Card.AddCard:hover {
+    background-color: antiquewhite;
+}
+
+.AddIcon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AddIcon {
+    cursor: pointer;
+}
+
+.button-wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
