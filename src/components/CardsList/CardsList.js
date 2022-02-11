@@ -9,7 +9,7 @@ const cardsList = ({ cards, handleAddCard }) => {
         {cards.map((card)=> (
             <Card id={card.id} text={card.text} date={card.date} comment={card.comment} />
         ))}  
-        <AddCard handleAddCard={handleAddCard}/>
+        <AddCard handleAddCard={handleAddCard}/> 
     </div>
   );
 };
